@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 
+{% block title %}Title{% endblock title %}
+
+
 {% block content %}
     <p>Hello index.html here!</p>
+
+    {% for city in cities %}
+    <p>{{ city }}</p>
+    {% endfor %}
+
+    {% if cities %}
+    <p>There are some cities</p>
+    {% endif %}
+
 {% endblock content %}
