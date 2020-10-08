@@ -1,17 +1,28 @@
 {% extends "base.html" %}
 
-{% block title %}Title{% endblock title %}
+{% block title %}
+    <ul>
+        <li><a href="/">Index</a></li>
+        <li><a href="about">About</a></li>
+    </ul>
+{% endblock title %}
 
 
 {% block content %}
     <p>Hello index.html here!</p>
-
-    {% for city in cities %}
-    <p>{{ city }}</p>
-    {% endfor %}
+    <p>
+        Current Year: {{current_year}} <br>
+        Handler-Text: {{some_text}}
+    </p>
 
     {% if cities %}
-    <p>There are some cities</p>
+        <ul>
+        {% for city in cities %}
+            <li>{{ city }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+    <p>There are no cities</p>
     {% endif %}
 
 {% endblock content %}
